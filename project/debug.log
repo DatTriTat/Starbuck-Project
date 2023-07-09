@@ -1,0 +1,21 @@
+{"balance":20,"cardCode":"467","cardNumber":"149221277","activated":false,"status":"New Card"}
+New Card: 149221277[467] Balance: 20.0
+Status: 200 
+{"balance":20,"cardCode":"467","cardNumber":"149221277","activated":true,"status":"New Card"}
+============================================
+--------- D E V I C E  S T A T E  ----------
+============================================
+Pin Option    = 4
+Stored Pin    = 1234
+Authenticated = false
+Orientation   = PORTRAIT
+API URL       = http://34.170.242.135/api
+API KEY       = Zkfokey2311
+API Register  = 5012349
+============================================
+Screen: starbucks.Passcode
+Screen: starbucks.Spacer
+Screen: starbucks.KeyPad
+Exception in thread "main" java.io.IOError: java.io.IOException: Input/output error
+	at java.base/java.io.Console.readLine(Console.java:257)
+	at java.base/java.io.Console.readLine(Console.java:275)

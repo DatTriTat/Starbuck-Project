@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<html>
+
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="main">
+		<input type="checkbox" id="chk" aria-hidden="true">
+		<div class="signup">
+			<form name="form" th:object="${command}" method="post" action="">
+				<label for="chk" aria-hidden="true">Sign up</label>
+				<input type="text" name="txt" placeholder="Username" th:field="*{username}">
+				<input type="text" name="txt" placeholder="Password" th:field="*{password}">
+				<input type="password" name="txt" placeholder="Re-Password" th:field="*{repassword}">
+				<input type="hidden" name="action" value="SIGN UP">
+				<button type="submit" id="signup">Sign up</button>
+				<div class="col-xs-15" th:if="${errorMessage}" style="text-align: center;">
+					<span th:text="${errorMessage}" style="color: red;"></span>
+				</div>
+			</form>
+		</div>
+
+		<div class="login">
+			<form name="loginform" th:object="${command}" method="post" action="">
+				<label for="chk" aria-hidden="true">Login</label>
+				<input type="text" name="txt" placeholder="Username" th:field="*{username}">
+				<input type="password" name="txt" placeholder="Password" th:field="*{password}">
+				<input type="hidden" name="action" value="LOGIN">
+				<button type="submit" id="login">Login</button>
+				<div class="col-xs-15" th:if="${errorMessage}" style="text-align: center;">
+					<span th:text="${errorMessage}" style="color: red;"></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

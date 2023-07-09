@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<html>
+
+<head>
+  <title>Starbucks Reserved</title>
+
+  <script type="text/javascript">
+    function selectedStore() {
+      reg = document.getElementById("register").value
+      switch (reg) {
+        case "5012349":
+          document.getElementById("stores").options[0].selected = true
+          break;
+        case "1287612":
+          document.getElementById("stores").options[1].selected = true
+          break;
+        case "6498234":
+          document.getElementById("stores").options[2].selected = true
+          break;
+        case "7812386":
+          document.getElementById("stores").options[3].selected = true
+          break;
+        case "8723098":
+          document.getElementById("stores").options[4].selected = true
+          break;
+        case "9621043":
+          document.getElementById("stores").options[5].selected = true
+          break;
+        case "1393478":
+          document.getElementById("stores").options[6].selected = true
+          break;
+        default:
+          document.getElementById("stores").options[0].selected = true
+      }
+    }
+  </script>
+
+</head>
+
+<body onload="selectedStore()">
+
+  <h1 align="center">Welcome to Starbucks Reserved (Final 2023)</h1>
+
+  <!-- FORM SECTION -->
+
+  <form name="form" th:object="${command}" method="post" action="">
+
+    <input type="hidden" name="register" id="register" th:field="*{register}" />
+
+    <p>
+    <div align="center">
+      <textarea readonly id="message" name="message" cols="50" rows="13" th:text="${message}" />
+    </div>
+    </p>
+
+    <div align="center">
+      <label for="stores">Select Store:</label>
+      <select name="stores" id="stores">
+        <option value="5012349">Dub-C</option>
+        <option value="1287612">P-Town</option>
+        <option value="6498234">The City</option>
+        <option value="7812386">Eso</option>
+        <option value="8723098">The Dro</option>
+        <option value="9621043">Mateo</option>
+        <option value="1393478">Deadwood</option>
+      </select>
+    </div>
+
+    <br />
+
+    <p align="center"><img src="/images/starbucks.jpg"></p>
+
+    <div align="center">
+      <label for="drinkOption">Drink Options:</label>
+      <select name="drinkOption" id="drinkOption">
+        <option value="Caffe Latte">Caffe Latte</option>
+        <option value="Caffe Americano">Caffe Americano</option>
+        <option value="Caffe Mocha">Caffe Mocha</option>
+        <option value="White Chocolate Mocha">White Chocolate Mocha</option>
+        <option value="Cappuccino">Cappuccino</option>
+      </select>
+      <label for="milkOption">Milk Options:</label>
+      <select name="milkOption" id="milkOption">
+        <option value="Whole Milk">Whole Milk</option>
+        <option value="2% Milk">2% Milk</option>
+        <option value="Nonfat Milk">Nonfat Milk</option>
+        <option value="Almond Milk">Almond Milk</option>
+        <option value="Soy Milk">Soy Milk</option>
+
+      </select>
+      <label for="sizeOption">Size Options:</label>
+      <select name="sizeOption" id="sizeOption">
+        <option value="Tall">Tall</option>
+        <option value="Grande">Grande</option>
+        <option value="Venti">Venti</option>
+        <option value="Your Own Cup">Your Own Cup</option>
+      </select>
+    </div>
+
+    <p align="center">
+      <input type="submit" name="action" id="btnGetOrder" value="Get Order">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" name="action" id="btnPlaceOrder" value="Place Order">
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" name="action" id="btnClearOrder" value="Clear Order">
+    </p>
+
+  </form>
+
+  <!-- END FORM SECTION -->
+
+  <br />
+  <br />
+
+  <div align="center">
+    <pre>Server Host/IP:  <span th:text="${server}" /></pre>
+  </div>
+
+  <br />
+  <br />
+
+</body>
+
+</html>
